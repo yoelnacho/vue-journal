@@ -9,10 +9,14 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
+import { mapState } from 'vuex'
 
 export default {
     components: {
         Fab: defineAsyncComponent( () => import('../components/Fab.vue') )
+    },
+    computed: {
+        ...mapState('journal', ['isLoading'])
     }
 }
 </script>
